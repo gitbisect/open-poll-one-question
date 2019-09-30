@@ -5,8 +5,11 @@ import SEO from "../components/seo"
 
 import NewSuggestion from '../components/new-suggestion'
 
-const handleSubmitNewSuggestion = () => {
+const handleSubmitNewSuggestion = (e) => {
+  e.preventDefault()
   console.log("Submit Clicked")
+  console.log(e.target.suggestion.value)
+  console.log(e.target.email.value)
 }
 const IndexPage = () => (
   <Layout>
@@ -14,7 +17,7 @@ const IndexPage = () => (
     <h1>Please give your suggestions or vote</h1>
     <p>What topics would you like to hear about at the NEXT talk?</p>
 
-    <NewSuggestion props={handleSubmitNewSuggestion} />
+    <NewSuggestion handleSubmitNewSuggestion={handleSubmitNewSuggestion} />
   </Layout>
 )
 
