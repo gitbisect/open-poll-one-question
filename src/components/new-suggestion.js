@@ -8,13 +8,13 @@ const newSuggestion = (props) => {
           <label htmlFor="suggestion">Your topic suggestion</label>
         </div>
         <div>
-          <textarea name="suggestion" id="suggestion" cols="60" rows="10" defaultValue="Your suggestion here please"></textarea>
+          <textarea name="suggestion" id="suggestion" cols="60" rows="5" placeholder="Your suggestion here please" required></textarea>
         </div>
         <div>
           <label htmlFor="email">Email</label>
         </div>
         <div>
-          <input type="email" id="email" />
+          <input type="email" id="email" placeholder="Your email" required />
         </div>
         <div>
           <button type="submit">Thats what I want </button>
