@@ -1,4 +1,4 @@
-.card-container {
+.grid-container {
   background-color: lightcyan;
   margin: 2em;
   padding: 0.5em;
@@ -6,22 +6,15 @@
   border-style: solid;
   border-color: aquamarine;
   min-width: 275;
+  box-shadow: 8px 8px 8px rgb(154, 214, 236);
 }
-.card-container > h3 {
+.proposer {
   margin: 0.5em;
-  color: blueviolet;
 }
-.card-bottom {
-  display: grid;
-  grid-template-columns: 7fr 3fr;
 
-  grid-template-ares:
-    "suggestion-in-card like-area";
-}
-.suggestion-in-card { 
-  color: darkslateblue;
+.suggestion { 
   padding: 0.5em;
-
+  font-size: 2em;
 }
 
 .like-area{
@@ -29,10 +22,35 @@
   text-align: center;
 }
 
-.thumbs-up-icon-in-card {
+.like {
   font-size: 2em;
-  color: blue;
+  color: rgb(239, 239, 245);
 }
-.vote-count {
-  font-size: 2em;
-} 
+.num_votes {
+  padding: 1em;
+  text-align: center;
+}
+
+.likers {
+    padding: 0.5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: minmax(auto, auto);
+  grid-template-areas: 
+    "suggestion suggestion suggestion suggestion like-area" 
+    "proposer proposer proposer . num_votes" 
+    "likers likers likers likers likers";
+}
+
+.num_votes { grid-area: num_votes; }
+
+.suggestion { grid-area: suggestion; }
+
+.like { grid-area: like; }
+
+.proposer { grid-area: proposer; }
+
+.likers { grid-area: likers; }

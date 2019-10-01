@@ -1,14 +1,16 @@
 import React from 'react'
 import './new-suggestion.css'
+import Button from '@material-ui/core/Button';
 
 const newSuggestion = (props) => {
   return (
     <div className='suggestion-container'>
       <div className="the-reason">
         For the 2020 AWS Community Day, we want to tailor the talks to
-        what the audience really wants to hear about. So we want your
+        the topics the audience really wants to hear about. So we want your
         suggestions on what the talks should be about.
-        <p>What topics would you like to hear about at the NEXT talk?</p>
+        <p></p>
+        What topics would you like to hear about at the AWS Community Day talks?
       </div>
 
       <form className="suggestion-form" onSubmit={props.handleSubmitNewSuggestion}>
@@ -36,7 +38,10 @@ const newSuggestion = (props) => {
         </div>
         <p></p>
         <div>
-          <button type="submit">Thats what I want </button>
+          <Button variant="contained" size="large"
+            color="primary" className="" type="submit">
+            Please add this to the list
+          </Button>
         </div>
       </form>
 

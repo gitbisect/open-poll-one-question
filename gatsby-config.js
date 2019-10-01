@@ -4,6 +4,7 @@ module.exports = {
     description: `Ask a question, and get answers and votes`,
     author: `John Varghese`,
   },
+
   plugins: [
     `gatsby-plugin-react-helmet`,
     {

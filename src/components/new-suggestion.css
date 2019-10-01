@@ -5,10 +5,12 @@
 }
 
 .the-reason {
-  background-color: lightblue;
-  color: rgb(35, 63, 224);
+  background-color: rgb(112, 225, 129);
+  color: rgb(12, 12, 2);
   opacity: 0.8;
-  padding: 0.5em;
+  padding: 1em;
+  font-weight: bolder;
+  font-size: 1.25rem;
 }
 
 .suggestion-form {
@@ -21,7 +23,6 @@
   padding: 1em;
   width:100%
 }
-
 .suggester-name,
 .suggester-email {
   padding: 0.5em;
