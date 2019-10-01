@@ -1,38 +1,33 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import SuggestionCard from './suggestion-card'
 
-import { useStaticQuery, graphql } from "gatsby"
-
+import { listAllItems } from '../components/dynamo-open-poll'
 
 const Suggestions = () => {
-  const data = useStaticQuery(graphql`
-    query {
-      allSuggestionsCsv {
-        nodes {
-          name
-          suggestion
-          likers
-          email
-          id
-          num_votes
-        }
-      }
-    }`
-  )
-  console.table(data.allSuggestionsCsv.nodes)
 
+
+  const [allItems, setAllItems] = useState([])
+  const getAllItems = async () => {
+    let x = await listAllItems()
+    setAllItems(x.Items)
+  }
+
+  const incrementLike = (index, cookieName) => {
+    const newItems = [...allItems]
+    newItems[index].num_votes.N++
+    newItems[index].likers.L.push({ S: cookieName })
+    setAllItems(newItems)
+  }
+  useEffect(() => {
+    getAllItems()
+  }, [])
 
   return (
     <div>
       {
-        data.allSuggestionsCsv.nodes.map((node, index) => {
-
-          // console.log(node.num_votes)
-          // return (<p>{node.email}</p> + "john" + node.email + node.suggestion + node.num_votes)
+        allItems.map((node, index) => {
           return (
-            <>
-              <SuggestionCard node={node} />
-            </>
+            <SuggestionCard node={node} onLikeClick={incrementLike} key={node.suggestion.S + node.proposer.S} index={index} />
           )
         })
       }
@@ -41,3 +36,6 @@ const Suggestions = () => {
 }
 
 export default Suggestions
+
+
+

@@ -1,8 +1,24 @@
 import React from 'react'
 import './new-suggestion.css'
 import Button from '@material-ui/core/Button';
+import { putItem } from '../components/dynamo-open-poll'
 
-const newSuggestion = (props) => {
+const handleSubmitNewSuggestion = (e) => {
+  e.preventDefault()
+  const newItem = {
+    suggestion: e.target.suggestion.value,
+    proposer: e.target.user_full_name.value,
+    proposer_email: e.target.email.value,
+    num_votes: 1,
+    likers: [],
+  }
+  console.table(newItem)
+
+  putItem(newItem)
+}
+
+
+const newSuggestion = () => {
   return (
     <div className='suggestion-container'>
       <div className="the-reason">
@@ -13,7 +29,7 @@ const newSuggestion = (props) => {
         What topics would you like to hear about at the AWS Community Day talks?
       </div>
 
-      <form className="suggestion-form" onSubmit={props.handleSubmitNewSuggestion}>
+      <form className="suggestion-form" onSubmit={handleSubmitNewSuggestion}>
         <div className="suggestion-box-label" >
           <label htmlFor="suggestion">Your topic suggestion</label>
         </div>
@@ -30,10 +46,10 @@ const newSuggestion = (props) => {
             className="suggester-email" />
         </div>
         <div className="suggestion-box-label" >
-          <label htmlFor="user-full-name">Your name please</label>
+          <label htmlFor="user_full_name">Your name please</label>
         </div>
         <div>
-          <input type="text" id="user-full-name" placeholder="Your name" required
+          <input type="text" id="user_full_name" placeholder="Your name" required
             className="suggester-name" />
         </div>
         <p></p>

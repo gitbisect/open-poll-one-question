@@ -1,4 +1,4 @@
-id,name,suggestion,email,num_votes,likers
+id,proposer,suggestion,proposer_email,num_votes,likers
 "001","John Varghese","Security in AWS",john_varghese2@intuit.com,6,"Sami Anand,Kain Swamy, Prushothaman Gaekwad,Disha Swapnam, Sumit Rehman"
 "002","Moshin Malik","Lambda and Serverless",moshin_malik@intuit.com,5,"Terence Williams,Raji Arau,Seema Raman, Julie Chauhan"
 "003","Terence Williams","Deploying javascript to lambda",john_varghese2@intuit.com,6,"Sami Anand,Kain Swamy, Prushothaman Gaekwad,Disha Swapnam, Sumit Rehman"
