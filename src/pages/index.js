@@ -18,9 +18,6 @@ const handleSubmitNewSuggestion = (e) => {
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Please give your suggestions or vote</h1>
-    <p>What topics would you like to hear about at the NEXT talk?</p>
-
     <NewSuggestion handleSubmitNewSuggestion={handleSubmitNewSuggestion} />
     <Suggestions />
 
