@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import NewSuggestion from '../components/new-suggestion'
+import Suggestions from '../components/suggestions'
 
 const handleSubmitNewSuggestion = (e) => {
   e.preventDefault()
@@ -21,6 +22,8 @@ const IndexPage = () => (
     <p>What topics would you like to hear about at the NEXT talk?</p>
 
     <NewSuggestion handleSubmitNewSuggestion={handleSubmitNewSuggestion} />
+    <Suggestions />
+
   </Layout>
 )
 

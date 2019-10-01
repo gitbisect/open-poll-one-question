@@ -1,0 +1,38 @@
+.card-container {
+  background-color: lightcyan;
+  margin: 2em;
+  padding: 0.5em;
+  border: 2pt;
+  border-style: solid;
+  border-color: aquamarine;
+  min-width: 275;
+}
+.card-container > h3 {
+  margin: 0.5em;
+  color: blueviolet;
+}
+.card-bottom {
+  display: grid;
+  grid-template-columns: 7fr 3fr;
+
+  grid-template-ares:
+    "suggestion-in-card like-area";
+}
+.suggestion-in-card { 
+  color: darkslateblue;
+  padding: 0.5em;
+
+}
+
+.like-area{
+  padding: 0.5em;
+  text-align: center;
+}
+
+.thumbs-up-icon-in-card {
+  font-size: 2em;
+  color: blue;
+}
+.vote-count {
+  font-size: 2em;
+} 
